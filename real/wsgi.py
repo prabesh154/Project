@@ -14,3 +14,4 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'real.settings')
 
 application = get_wsgi_application()
+#show web server communicates with web application
