@@ -33,6 +33,20 @@ def search(request):
       keywords = request.GET['keywords']
       if keywords:
         queryset_list= queryset_list.filter(description__icontains=keywords)
+    
+    #city
+    if 'city' in request.GET:
+      city = request.GET['city']
+      if city:
+        queryset_list= queryset_list.filter(city__icontains=city)
+
+    
+     #district
+    if 'district' in request.GET:
+      district = request.GET['district']
+      if district:
+        queryset_list= queryset_list.filter(district__icontains=district)
+
     context = {
         'district_choices': district_choices,
         'price_choices': price_choices,

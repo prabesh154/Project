@@ -37,6 +37,7 @@ district_choices={
     'CHW': 'Chitwan',
     'PKR':'Kaski/Pokhara',
     'BHR': 'Bhairahawa',
-    'KAV':'Kavre'
+    'KAV':'Kavre',
+    'NUW': 'Nuwakot'
 }
    
