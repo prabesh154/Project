@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
                 ('address', models.CharField(max_length=200)),
-                ('city', models.CharField(max_length=100)),
+                ('place', models.CharField(max_length=100)),
                 ('district', models.CharField(max_length=100)),
                 ('Face', models.CharField(blank=True, max_length=50)),
                 ('road_access', models.CharField(max_length=60)),

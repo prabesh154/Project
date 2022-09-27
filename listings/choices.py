@@ -18,16 +18,16 @@ bedroom_choices ={
 
 price_choices ={
 
-    '1crore':'1crore',
-    '2crore':'2crore',
-    '3crore':'3crore',
-    '4crore':'4crore',
-    '5crore':'5crore',
-    '6crore':'6crore',
-    '7crore':'7crore',
-    '8crore':'8crore',
-    '9crore':'9crore',
-    '10crore+':'10crore+',
+    '1crore':'Rs.1crore',
+    '2crore':'Rs.2crore',
+    '3crore':'Rs.3crore',
+    '4crore':'Rs.4crore',
+    '5crore':'Rs.5crore',
+    '6crore':'Rs.6crore',
+    '7crore':'Rs.7crore',
+    '8crore':'Rs.8crore',
+    '9crore':'Rs.9crore',
+    '10crore+':'Rs.10crore+',
 }
 
 district_choices={

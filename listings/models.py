@@ -1,3 +1,4 @@
+
 from django.db import models
 from datetime import datetime
 from realtors.models import Realtor
@@ -6,7 +7,7 @@ class Listing(models.Model):
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
-    city = models.CharField(max_length=100)
+    place = models.CharField(max_length=100)
     district = models.CharField(max_length=100)
     Face = models.CharField(max_length=50,blank=True)
     road_access = models.CharField(max_length=60)

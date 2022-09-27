@@ -1,5 +1,4 @@
 {% extends 'base.html' %} {% block content %}
-
 <section id="showcase-inner" class="showcase-search text-white py-5">
   <div class="container">
     <div class="row text-center">
@@ -14,16 +13,18 @@
                 name="keywords"
                 class="form-control"
                 placeholder="Keyword (Pool, Garage, etc)"
+                value="{{values.keywords}}"      
               />
             </div>
 
             <div class="col-md-4 mb-3">
-              <label class="sr-only">City</label>
+              <label class="sr-only">Place</label>
               <input
                 type="text"
-                name="city"
+                name="place"
                 class="form-control"
-                placeholder="City"
+                placeholder="Place"
+                value="{{values.place}}"      
               />
             </div>
 
@@ -32,7 +33,13 @@
               <select name="district" class="form-control">
                 <option selected="true" disabled="disabled">District (All)</option>
                 {% for key,value in district_choices.items %}
-                <option value="{{ key }}">{{ value }}</option>
+                
+                <option value="{{ key }}" 
+                {% if key == values.district %}
+                 selected 
+
+                {% endif %}
+                >{{ value }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -46,7 +53,13 @@
                   Bedrooms (Any)
                 </option>
                 {% for key,value in bedroom_choices.items %}
-                <option value="{{ key }}">{{ value }}</option>
+                <option value="{{ key }}"
+                {% if key == values.bedrooms %}
+                selected 
+
+               {% endif %}
+                
+                >{{ value }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -56,7 +69,14 @@
                   Max Price (All)
                 </option>
                 {% for key,value in price_choices.items %}
-                <option value="{{ key }}">{{ value }}</option>
+                <option value="{{ key }}"
+                
+                {% if key == values.price %}
+                selected 
+
+               {% endif %}
+                
+                >{{ value }}</option>
                 {% endfor %}
               </select>
             </div>
