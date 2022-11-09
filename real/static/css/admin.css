@@ -6,10 +6,6 @@
 #branding h1 {
   color: #fff;
 }
-a:link,
-a:visited {
-  color: #ffffff;
-}
 
 div.breadcrumbs {
   background: #30caa0;
@@ -23,11 +19,4 @@ div.breadcrumbs a {
 .module caption,
 .inline-group h2 {
   background: #30caa0;
-}
-.button,
-input[type="submit"],
-input[type="button"],
-.submit-row input,
-a.button {
-  background: #10284e;
 }
