@@ -31,13 +31,12 @@ price_choices ={
 }
 
 district_choices={
-    'KTM': 'Kathmandu',
-    'LLP': 'Lalitpur',
-    'BKT': 'Bhaktapur',
-    'CHW': 'Chitwan',
-    'PKR':'Kaski/Pokhara',
-    'BHR': 'Bhairahawa',
-    'KAV':'Kavre',
-    'NUW': 'Nuwakot'
+    'Kathmandu': 'Kathmandu',
+    'Lalitpur': 'Lalitpur',
+    'Bhaktapur': 'Bhaktapur',
+    'Chitwan': 'Chitwan',
+    'Kaski':'Kaski',
+    'NUW': 'Nuwakot',
+    'Dolpa':'Dolpa'
 }
    
