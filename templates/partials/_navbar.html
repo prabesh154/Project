@@ -1,10 +1,10 @@
 {% load static %}
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark  sticky-top" style="background-color: black;">
   <div class="container">
-    <a class="navbar-brand" href="{% url 'index' %}">
-      <img src="{% static 'img/logo2.jpg' %}" class="logo" alt="" />
-    </a>
+    <!-- <a class="navbar-brand" href="{% url 'index' %}">
+      <img src="{% static 'img/Regent Nepal Logo.png' %}" class="logo" alt="" />
+    </a> -->
     <button
       class="navbar-toggler"
       type="button"
@@ -14,6 +14,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <li>
+          <a class="navbar-brand" href="{% url 'index' %}" >
+            <img src="{% static 'img/logo.png' %}" width=200 class="logo" alt="" />
+          </a>
+        </li>
+
+      </ul>
+      
       <ul class="navbar-nav">
         <!--Active during click after hoverp-->
         <li 
@@ -55,8 +64,8 @@
         {% endif %}
     >
         >
-          <a class="nav-link" href="{% url 'dashboard' %}">
-            Welcome {{ user.username}} Dashboard</a
+          <a class="nav-link" style="display: inline-block;" href="{% url 'dashboard' %}">
+            Welcome {{ user.username}} Dashboard </a
           >
         </li>
         <li class="nav-item mr-3">
