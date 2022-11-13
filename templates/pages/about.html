@@ -1,5 +1,32 @@
 {% extends 'base.html' %} {% load static %} {% block title %} | About Us
 {%endblock%} {% block content %}
+<style>
+  .cardTitle {
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: cadetblue;
+  }
+  .textSecondary {
+    text-align: center;
+    color: black;
+  }
+  h1 {
+    font-family: serif;
+    color: #e6eaef;
+  }
+
+  .lead {
+    font-family: serif;
+    color: #d4d7de;
+    font-size: 22px;
+  }
+  .leadtop {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #191d27;
+    font-size: 19px;
+    margin-top: 20px;
+  }
+</style>
 
 <section id="showcase-inner" class="py-5 text-white">
   <div class="container">
@@ -33,30 +60,32 @@
     <div class="row">
       <div class="col-md-8">
         <h2>We Search For Your Dream Property.</h2>
-        <p class="lead">
-          Regent Nepal is a technology powered real estate startup founded with
-          the hope of serving the home seekers and realtors.
-        </p>
-        <img src="{% static 'img/about.jpg' %}" alt="About Us" />
-        <p class="mt-4">
-          With the passion to empower the consumers and simplify the real estate
-          scenario, Regent Nepal focuses on providing solutions and professional
-          guidance with the combination of technology, digital presence and
-          experienced field agents and realtors.Whether you’re looking for
-          property for sale in Nepal, Regent Nepal makes searching easy.
+        <img src="{% static 'img/showcase.jpg' %}" alt="About Us" />
+        <p class="leadtop">
+          <b>Regent Nepal</b> is a technology powered real estate startup
+          founded with the hope of serving the home seekers and realtors.Regent
+          Nepal aims to be Nepal’s most innovative real estate dealing platform
+          for homeowners, landlords, contractors and realtors. The company
+          offers listings for different commercial and residential housing
+          properties.Backed by professional team of realtors, we have been able
+          to deliver our services in a smooth way.
         </p>
       </div>
       <div class="col-md-4">
         {% if mvp_realtors %} {% for realtor in mvp_realtors %}
         <div class="card">
-          <img
-            class="card-img-top"
-            src="{{ realtor.photo.url }}"
-            alt="Seller of the month"
-          />
+          <!-- class="card" -->
+          <!-- class="card-img-top" -->
+          <div style="display: flex; justify-content: center; margin-top: 20px">
+            <img
+              src="{{ realtor.photo.url }}"
+              alt="Seller of the month"
+              style="width: 200px; border-radius: 20px"
+            />
+          </div>
           <div class="card-body">
-            <h5 class="card-title">Seller Of The Month</h5>
-            <h6 class="text-secondary">{{ realtor.name }}</h6>
+            <h5 class="cardTitle">Seller Of The Month</h5>
+            <h6 class="textSecondary">{{ realtor.name }}</h6>
             <p class="card-text">{{ realtor.description }}</p>
           </div>
         </div>
@@ -67,33 +96,34 @@
 </section>
 
 <!-- Work -->
-<section id="work" class="bg-dark text-white text-center">
-  <h2 class="display-4">We Work For You</h2>
-  <h4>
-    You can’t buy happiness, but you can buy real estate, and that’s kind of the
-    same thing.
-  </h4>
-  <hr />
-  <a href="{% url 'listings' %}" class="btn btn-secondary text-white btn-lg"
-    >View Our Featured Listings</a
-  >
-</section>
-
 <!-- Team -->
 <section id="team" class="py-5">
   <div class="container">
     <h2 class="text-center">Our Team</h2>
     <div class="row text-center">
       {% if realtors %} {% for realtor in realtors%}
-      <div class="col-md-4">
-        <img src="{{ realtor.photo.url }}" alt="" class="rounded-circle mb-3" />
+      <div class="col-md-4" style="margin-top: 20px">
+        <div id="photoSize" style="margin-bottom: 10px">
+          <img
+            src="{{ realtor.photo.url }}"
+            alt=""
+            style="width: 200px; height: 250px; border-radius: 30px"
+          />
+          <!-- <img
+            src="{{ realtor.photo.url }}"
+            alt=""
+            class="rounded-circle mb-3"
+          /> -->
+        </div>
         <h4>{{realtor.name}}</h4>
-        <p class="text-success">
-          <i class="fas fa-award text-success mb-3"></i> Realtor
+        <p class="text-success" style="margin-bottom: 5px">
+          <i class="fas fa-award text-success mb-0"></i> Realtor
         </p>
-        <hr />
-        <p><i class="fas fa-phone"></i> {{realtor.phone}}</p>
-        <p><i class="fas fa-envelope-open"></i> {{realtor.email}}</p>
+        <hr style="margin-top: 1px; margin-bottom: 5px" />
+        <p style="margin-top: 1px; margin-bottom: 0px">
+          <i class="fas fa-phone"></i> {{realtor.phone}}
+        </p>
+        <p style=""><i class="fas fa-envelope-open"></i> {{realtor.email}}</p>
       </div>
       {% endfor%} {% else%}
 
@@ -101,7 +131,7 @@
         <p>No Realtors Available</p>
       </div>
 
-      {%endif%} <
+      {%endif%}
     </div>
   </div>
 </section>

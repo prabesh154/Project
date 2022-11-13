@@ -4,7 +4,7 @@ from buyers.models import Buyer
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 # Create your views here.
-def contact(request):
+def contactbuy(request):
  if not  request.user.is_authenticated:
      messages.error(request,' Login in to Proceed')
      return redirect('/accounts/login')

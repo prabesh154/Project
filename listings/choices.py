@@ -36,7 +36,9 @@ district_choices={
     'Bhaktapur': 'Bhaktapur',
     'Chitwan': 'Chitwan',
     'Kaski':'Kaski',
-    'NUW': 'Nuwakot',
-    'Dolpa':'Dolpa'
+    'Nuwakot': 'Nuwakot',
+    'Dolpa':'Dolpa',
+    'Bhairahawa': 'Bhairahawa',
+    'Kavre': 'Kavre'
 }
    

@@ -1,4 +1,10 @@
 {% if messages %} {% for message in messages %}
+<style>
+  .alert-success {
+    color: rgb(124, 124, 176);
+    background-color: rgb(201, 191, 178);
+  }
+</style>
 <div id="message" class="container">
   <div
     class="alert alert-{{ message.tags }} alert-dismissible text-center"

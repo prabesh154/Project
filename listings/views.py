@@ -1,8 +1,10 @@
 from ast import keyword
-from django.shortcuts import get_object_or_404,render
+from django.shortcuts import get_object_or_404,render,redirect
 from .models import Listing
 from django.core.paginator import EmptyPage,PageNotAnInteger,Paginator
 from .choices import price_choices,district_choices,bedroom_choices
+
+
 
 def index(request):
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
@@ -19,12 +21,15 @@ def index(request):
 
 def listing(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
+    
 
     context ={
         'listing': listing
     }
 
     return render(request, 'listings/listing.html',context)
+
+ 
 
 def search(request):
     queryset_list = Listing.objects.order_by('-list_date')
@@ -68,3 +73,5 @@ def search(request):
 
       }
     return  render(request, 'listings/search.html',context)
+
+    

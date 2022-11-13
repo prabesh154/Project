@@ -2,9 +2,13 @@ from email import message
 from django.shortcuts import render,redirect
 from django.contrib import messages,auth
 from django.contrib.auth.models import User
-from contacts.models import Contact
+from buyers.models import Buyer
+from listings.models import Listing
 
 # Create your views here.
+
+
+
 def register(request):
     #REGISTER USER
     if request.method=='POST':
@@ -14,16 +18,26 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
+        if len(username)<5:
+         messages.error(request,'Username should contain more than 4 letters. ')
+         return redirect('register')
+        
+
+        if len(password and password2)<5:
+          messages.error(request,'Password should be of more than 4 digits ')
+          return redirect('register')
       #Check for validation
         if password==password2:
         #check duplicate username
           if User.objects.filter(username=username).exists():
             messages.error(request,'That username is taken already')
             return redirect('register')
+        
           else:
             if User.objects.filter(email=email).exists():
              messages.error(request,'This email is already in use')
              return redirect('register')
+           
             
             else:
               user = User.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name)
@@ -45,17 +59,24 @@ def register(request):
      return render(request,'accounts/register.html')
 
 
+
+
+
+
 def login(request):
     if request.method=='POST':
       username = request.POST['username']
       password = request.POST['password']
 
       user = auth.authenticate(username=username,password=password)
-
+      
       if user is not None:
         auth.login(request,user)
         messages.success(request,'You are logged in')
         return redirect('dashboard')
+        
+        
+
 
       else:
        messages.error(request,'Invalid credentials')
@@ -73,13 +94,15 @@ def logout(request):
         return redirect('index')
 
 def dashboard(request):
-  user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+  user_contacts = Buyer.objects.order_by('-contact_date').filter(user_id=request.user.id)
   context = {
-    'contacts':user_contacts
+    'buyers':user_contacts
 
   }
   
   return render (request,'accounts/dashboard.html',context)
+
+ 
 
 
      

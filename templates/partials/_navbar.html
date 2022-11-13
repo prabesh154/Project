@@ -2,9 +2,9 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark  sticky-top" style="background-color: black;">
   <div class="container">
-    <!-- <a class="navbar-brand" href="{% url 'index' %}">
-      <img src="{% static 'img/Regent Nepal Logo.png' %}" class="logo" alt="" />
-    </a> -->
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <img src="{% static 'img/logodemo.png' %}" class="logo" alt="" />
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,7 +17,7 @@
       <ul class="navbar-nav">
         <li>
           <a class="navbar-brand" href="{% url 'index' %}" >
-            <img src="{% static 'img/logo.png' %}" width=200 class="logo" alt="" />
+            <img src="{% static 'img/RegentNepal.png' %}" width=200 class="logo" alt="" />
           </a>
         </li>
 
@@ -50,7 +50,16 @@
          class="nav-item mr -3"
          {% endif %}
      >
-          <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
+          <a class="nav-link" href="{% url 'listings' %}"> Listings</a>
+        </li>
+        <li 
+           {% if 'seller' in request.path %}
+            class="nav-item active mr -3"
+            {% else %}
+            class="nav-item mr -3"
+            {% endif %}
+        >
+          <a class="nav-link" href="{% url 'seller' %}">Want to Sale?</a>
         </li>
       </ul>
 
@@ -63,7 +72,7 @@
         class="nav-item mr -3"
         {% endif %}
     >
-        >
+        
           <a class="nav-link" style="display: inline-block;" href="{% url 'dashboard' %}">
             Welcome {{ user.username}} Dashboard </a
           >
@@ -89,7 +98,7 @@
               class="nav-item mr -3"
               {% endif %}
           >
-              >
+              
                 <a class="nav-link" href="{% url 'register' %}">
                   <i class="fas fa-user-plus"></i> Register</a
                 >
@@ -102,7 +111,7 @@
               {% endif %}
           >
               
-              >
+              
                 <a class="nav-link" href="{% url 'login'   %}">
                   <i class="fas fa-sign-in-alt"></i>
 

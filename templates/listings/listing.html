@@ -5,6 +5,25 @@
   .textsecondary {
     color: black;
   }
+  .textSecondary {
+    text-align: center;
+    color: black;
+  }
+  h1 {
+    font-family: serif;
+    color: #e6eaef;
+  }
+
+  .lead {
+    font-family: serif;
+    color: #d4d7de;
+    font-size: 22px;
+  }
+  .cardTitle {
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: cadetblue;
+  }
 </style>
 
 <section id="showcase-inner" class="py-5 text-white">
@@ -13,7 +32,10 @@
       <div class="col-md-12">
         <h1 class="display-4">{{listing.title}}</h1>
         <p class="lead">
-          <i class="fas fa-map-marker" style="margin-right: 5px"></i
+          <i
+            class="fas fa-map-marker text-secondary"
+            style="margin-right: 5px"
+          ></i
           >{{listing.address}}
         </p>
       </div>
@@ -99,7 +121,7 @@
         <div
           class="row mb-5 fields"
           style="
-            border: 4px solid rgb(100, 105, 203);
+            border: 4px solid rgb(163, 157, 146);
             border-radius: 20px;
             padding: 10px;
           "
@@ -167,10 +189,8 @@
             alt=""
           />
           <div class="card-body">
-            <h5 class="card-title">Property Realtor</h5>
-            <h6 class="textsecondary" style="color: blue">
-              {{listing.realtor}}
-            </h6>
+            <h5 class="cardTitle">Property Realtor</h5>
+            <h6 class="textSecondary">{{listing.realtor}}</h6>
           </div>
         </div>
         <button
@@ -196,7 +216,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{% url 'contact' %}" method="POST">
+        <form action="{% url 'contactbuy' %}" method="POST">
           {% csrf_token %} {% if user.is_authenticated %}
           <input type="hidden" name="user_id" value="{{user.id}}" />
           {% else %}

@@ -42,7 +42,6 @@ img {
 }
 
 #services {
-  background: url(../img/building.jpg) no-repeat top center fixed/cover;
   min-height: 300px;
   position: relative;
   overflow: hidden;
@@ -54,7 +53,7 @@ img {
   left: 0;
   min-height: 100%;
   width: 100%;
-  background: rgba(32, 134, 107, 0.8);
+  background: rgba(1, 17, 13, 0.8);
 }
 
 #showcase-inner {
@@ -70,7 +69,7 @@ img {
   left: 0;
   min-height: 100%;
   width: 100%;
-  background: rgba(32, 134, 107, 0.8);
+  background: #a49b9f;
 }
 #showcase-inner.showcase-search {
   min-height: 270px;
@@ -82,6 +81,16 @@ img {
 
 .listing-preview a {
   position: relative;
+}
+.btn-secondary {
+  background-color: #10284e;
+  border-color: #10284e;
+  color: #dee2e6 !important;
+}
+.btn-secondary:hover {
+  background-color: #071224;
+  border-color: #050d19;
+  color: #fff;
 }
 
 @media (max-width: 991px) {
