@@ -18,7 +18,7 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
-        if len(username)<5:
+        if len(username)<4:
          messages.error(request,'Username should contain more than 4 letters. ')
          return redirect('register')
         
@@ -45,10 +45,7 @@ def register(request):
               messages.success(request,'You are now registered and you can log in')
               return redirect('login')
 
-               # Login after register directly
-                # auth.login(request,user)
-                # messages.success(request,'You are now logged in')
-                # return redirect('index')
+               
 
 
         else:
