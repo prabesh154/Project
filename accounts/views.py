@@ -4,6 +4,7 @@ from django.contrib import messages,auth
 from django.contrib.auth.models import User
 from buyers.models import Buyer
 from listings.models import Listing
+from accounts.models import Sellcontactss
 
 # Create your views here.
 
@@ -43,9 +44,8 @@ def register(request):
               user = User.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name)
               user.save()
               messages.success(request,'You are now registered and you can log in')
+              
               return redirect('login')
-
-               
 
 
         else:
@@ -98,6 +98,36 @@ def dashboard(request):
   }
   
   return render (request,'accounts/dashboard.html',context)
+
+def sellcontact(request):
+    if request.method =="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        location=request.POST['location']
+        message=request.POST['message']
+
+        sellcontact=Sellcontactss(
+            name=name,
+            email=email,
+            phone=phone,
+            location =location,
+            message=message
+        )
+        sellcontact.save()
+
+         
+
+        
+       
+        
+        messages.success(request,'Thanks for contacting Us')
+        return render(request,'pages/sellcontact.html')
+
+    else:
+
+     return render(request,'pages/sellcontact.html')
+
 
  
 
