@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {% block title %} | Contacts For Sale {%endblock%}
 {%block content%}
-
 <style>
   h1 {
     font-family: serif;
@@ -51,7 +50,7 @@
             <!--Alerts-->
             {% include 'partials/_alerts.html' %}
 
-            <form action="{% url 'seller' %}" method="POST">
+            <form action="{% url 'sellcontact' %}" method="POST">
               {% csrf_token %}
               <div class="form-group">
                 <label for="name">Name</label>

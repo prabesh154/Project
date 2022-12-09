@@ -33,31 +33,26 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Welcome {{user.first_name}}</h2>
-        {% if buyers %} {% if listing.id == buyer.listing_id %}
+        {% if buyers %}
         <p>Here are the property listings that you have inquired about</p>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
               <th scope="col">Property</th>
+              <th scope="col">View Properties</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             {% for buyer in buyers %}
+
             <tr>
-              <td>{{buyer.id}}</td>
               <td>{{buyer.listing }}</td>
               <td>
                 <a
                   class="btn btn-light"
                   href="{% url 'listing' buyer.listing_id%}"
                   >View Listing
-                </a>
-                <a
-                  class="btn btn-light"
-                  href="{% url 'delete_buyerlist' buyer.listing_id %}"
-                  >Delete
                 </a>
               </td>
             </tr>
@@ -66,7 +61,7 @@
         </table>
         {% else %}
         <p>You have not made any entries</p>
-        {% endif %} {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>

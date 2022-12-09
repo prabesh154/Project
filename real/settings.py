@@ -24,10 +24,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     #added PagesConfig from apps.py
-    'pages.apps.PagesConfig',   
+    ' pages.apps.PagesConfig',   
     'listings.apps.ListingsConfig', 
     'realtors.apps.RealtorsConfig', 
-    'sellers.apps.SellersConfig',
     'accounts.apps.AccountsConfig',
     'buyers.apps.BuyersConfig',
     'django.contrib.admin',
